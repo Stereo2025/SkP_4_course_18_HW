@@ -19,7 +19,7 @@ class DirectorsView(Resource):
 @director_ns.route('/<int:uid>/')
 class DirectorView(Resource):
 
-    def get_one(self, uid: int):
+    def get(self, uid: int):
         """Показывает 'director' по его pk"""
 
         director = director_service.get_one(uid)

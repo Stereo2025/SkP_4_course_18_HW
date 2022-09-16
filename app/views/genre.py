@@ -19,7 +19,7 @@ class GenresView(Resource):
 @genre_ns.route('/<int:uid>/')
 class GenreView(Resource):
 
-    def get_one(self, uid: int):
+    def get(self, uid: int):
         """"""
 
         genre = genre_service.get_one(uid)

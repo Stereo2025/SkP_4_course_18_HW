@@ -32,5 +32,4 @@ def create_data():
 
 if __name__ == '__main__':
     app = create_app(Config())
-    create_data()
     app.run(debug=True)
