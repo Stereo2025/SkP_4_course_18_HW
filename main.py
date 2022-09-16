@@ -10,7 +10,7 @@ from app.views.director import director_ns
 def create_app(config: Config) -> Flask:
 
     application = Flask(__name__)
-    application .config.from_object(config)
+    application.config.from_object(config)
     register_extensions(application)
     return application
 
@@ -22,10 +22,9 @@ def register_extensions(application: Flask):
     api.add_namespace(movie_ns)
     api.add_namespace(genre_ns)
     api.add_namespace(director_ns)
-    create_data(app, db)
 
 
-def create_data(app, db):
+def create_data():
 
     with app.app_context():
         db.create_all()
@@ -33,4 +32,5 @@ def create_data(app, db):
 
 if __name__ == '__main__':
     app = create_app(Config())
+    create_data()
     app.run(debug=True)
