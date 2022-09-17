@@ -8,9 +8,11 @@ class GenreDAO:
 
     def get_all(self):
         """Возвращает все 'genres'"""
+
         return self.session.query(Genre).all()
 
     def get_one(self, gid: int):
         """Возвращает 'genres' по id"""
+
         return self.session.query(Genre).get(gid)
 #######################################################################################################################
